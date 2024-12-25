@@ -4,6 +4,7 @@ import 'package:flutter_digikala_application/constants/colors.dart';
 import 'package:flutter_digikala_application/screens/category_screen.dart';
 import 'package:flutter_digikala_application/screens/home_screen.dart';
 import 'package:flutter_digikala_application/screens/product_list_screen.dart';
+import 'package:flutter_digikala_application/screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(),
+       
         body: IndexedStack(
           index:selectedBottomNavigationIndex ,
           children: getScreens()
@@ -145,9 +146,9 @@ class _MyAppState extends State<MyApp> {
 
 List <Widget> getScreens(){
   return<Widget>[
-    HomeScreen(),
-    CaegoryScreen(),
-    ProductListScreen(),
-    CaegoryScreen(),
+    const ProfileScreen(),
+    const CaegoryScreen(),
+    const ProductListScreen(),
+    const HomeScreen(),
   ];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_digikala_application/constants/colors.dart';
+import 'package:flutter_digikala_application/widgets/CategoryHorizontalItemList';
 import 'package:flutter_digikala_application/widgets/banner_slider.dart';
 import 'package:flutter_digikala_application/widgets/product_item.dart';
 
