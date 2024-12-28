@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_digikala_application/constants/colors.dart';
 
@@ -283,7 +285,7 @@ class ProductDetailScreen extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    Image.asset('assets/images/icon_left_category.png'),
+                    Image.asset('assets/images/icon_left_categroy.png'),
                     const SizedBox(
                       width: 10,
                     ),
@@ -324,7 +326,7 @@ class ProductDetailScreen extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    Image.asset('assets/images/icon_left_category.png'),
+                    Image.asset('assets/images/icon_left_categroy.png'),
                     const SizedBox(
                       width: 10,
                     ),
@@ -365,7 +367,7 @@ class ProductDetailScreen extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    Image.asset('assets/images/icon_left_category.png'),
+                    Image.asset('assets/images/icon_left_categroy.png'),
                     const SizedBox(
                       width: 10,
                     ),
@@ -385,9 +387,11 @@ class ProductDetailScreen extends StatelessWidget {
                           height: 26,
                           width: 26,
                           decoration: const BoxDecoration(
-                              color: Colors.red,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8))),
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8),
+                            ),
+                          ),
                         ),
                         Positioned(
                           right: 15,
@@ -396,9 +400,11 @@ class ProductDetailScreen extends StatelessWidget {
                             height: 26,
                             width: 26,
                             decoration: const BoxDecoration(
-                                color: Colors.green,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
                           ),
                         ),
                         Positioned(
@@ -408,9 +414,11 @@ class ProductDetailScreen extends StatelessWidget {
                             height: 26,
                             width: 26,
                             decoration: const BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                              color: Colors.yellow,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
                           ),
                         ),
                         Positioned(
@@ -420,9 +428,11 @@ class ProductDetailScreen extends StatelessWidget {
                             height: 26,
                             width: 26,
                             decoration: const BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
                           ),
                         ),
                         Positioned(
@@ -432,11 +442,13 @@ class ProductDetailScreen extends StatelessWidget {
                             height: 26,
                             width: 26,
                             decoration: const BoxDecoration(
-                                color: Colors.purple,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                            child:const Center(
-                              child:  Text(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
                                 '+10',
                                 style: TextStyle(
                                     fontFamily: 'sb',
@@ -464,9 +476,170 @@ class ProductDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
+            
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(top: 20,right: 44,left: 44),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    PriceTagButton(),
+                    AddToBasketButton(),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class AddToBasketButton extends StatelessWidget {
+  const AddToBasketButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
+      children: [
+        Positioned(
+          child: Container(
+            height: 60,
+            width: 140,
+            decoration: const BoxDecoration(
+              color: CustomColors.blue,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(15),
+            ),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: const SizedBox(
+                height: 53,
+                width: 160,
+                child: Center(
+                  child: Text(
+                    '  افزودن به سبد خرید',
+                    style: TextStyle(
+                        fontFamily: 'sb', fontSize: 16, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class PriceTagButton extends StatelessWidget {
+  const PriceTagButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
+      children: [
+        Positioned(
+          child: Container(
+            height: 60,
+            width: 140,
+            decoration: const BoxDecoration(
+              color: CustomColors.green,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(15),
+            ),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: SizedBox(
+                height: 53,
+                width: 160,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8), // Adjusted padding
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const Text(
+                        'تومان',
+                        style: TextStyle(
+                          fontFamily: 'SM',
+                          fontSize: 10, // Smaller font size
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4, // Reduced spacing
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '49.000.000',
+                            style: TextStyle(
+                              fontFamily: 'SM',
+                              fontSize: 10, // Smaller font size
+                              color: Colors.white,
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                          ),
+                          Text(
+                            '48.550.000',
+                            style: TextStyle(
+                              fontFamily: 'SM',
+                              fontSize: 14, // Slightly reduced font size
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12), // Smaller border radius
+                          ),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 4, vertical: 2), // Reduced padding
+                          child: Text(
+                            '%3',
+                            style: TextStyle(
+                                fontFamily: 'SB',
+                                fontSize: 10, // Smaller font size
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
