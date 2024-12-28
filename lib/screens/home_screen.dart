@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_digikala_application/constants/colors.dart';
-import 'package:flutter_digikala_application/widgets/CategoryHorizontalItemList';
+
 import 'package:flutter_digikala_application/widgets/banner_slider.dart';
+import 'package:flutter_digikala_application/widgets/category_item_chip.dart';
 import 'package:flutter_digikala_application/widgets/product_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -78,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return const Padding(
                           padding: EdgeInsets.only(left: 20),
-                          child: CategoryHorizontalItemList(),
+                          child: CategoryItemChip(),
                         );
                       },
                     ),
