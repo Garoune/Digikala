@@ -525,10 +525,10 @@ class AddToBasketButton extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: const SizedBox(
                 height: 53,
-                width: 160,
+                width: 144,
                 child: Center(
                   child: Text(
-                    '  افزودن به سبد خرید',
+                    '  افزودن سبد خرید',
                     style: TextStyle(
                         fontFamily: 'sb', fontSize: 16, color: Colors.white),
                   ),
@@ -571,7 +571,7 @@ class PriceTagButton extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: SizedBox(
                 height: 53,
-                width: 160,
+                width: 144,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 8), // Adjusted padding
